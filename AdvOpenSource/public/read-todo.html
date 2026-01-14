@@ -7,23 +7,6 @@
   <h1>Todo List</h1>
   <a href="/index">Back to Index</a>
   <ul id="list"></ul>
-
-  <script>
-    fetch("/todo")
-      .then(res => res.json())
-      .then(data => {
-        const list = document.getElementById("list");
-        list.innerHTML = "";
-
-        data.forEach(item => {
-          const li = document.createElement("li");
-          li.textContent = item.title + " - " + item.completed;
-          list.appendChild(li);
-        });
-      })
-      .catch(err => {
-        document.getElementById("list").textContent = "Error loading data";
-      });
-  </script>
+  <script src="js/TodoFetch.js"></script>
 </body>
 </html>
